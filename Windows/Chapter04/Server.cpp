@@ -10,7 +10,8 @@ int main(int argc, char* argv[]) {
 	if (WSAStartup(MAKEWORD(2, 2), &wsa) != 0)
 		return 1;
 	// 소켓 생성
-	// 소켓은 커널 오브젝트로 커널에 의해 관리되어집니다. socket() 반환값은 int 형으로 커널 오브젝트들의 고유 반환값을 리턴합니다.
+	// 소켓은 커널 오브젝트로 커널에 의해 관리되어집니다. 
+	// socket() 함수는 소켓을 생성하고 리턴으로 소켓 핸들러(소켓 디스크립터/ 리눅스의 파일 디스크립터와 비슷한 개념)를 생성한다.
 	SOCKET listen_sock = socket(AF_INET, SOCK_STREAM, 0);
 	if (listen_sock == INVALID_SOCKET)
 		err_quit("socket()");
