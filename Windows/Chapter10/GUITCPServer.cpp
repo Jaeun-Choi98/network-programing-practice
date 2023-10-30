@@ -141,7 +141,7 @@ DWORD WINAPI ServerMain(LPVOID arg) {
 		addrlen = sizeof(clientaddr);
 		client_sock = accept(listen_sock, (sockaddr*)&clientaddr,&addrlen);
 		if (retval == SOCKET_ERROR) {
-			DisplayText("accept()");
+			DisplayError("accept()");
 			break;
 		}
 		char addr[INET_ADDRSTRLEN];
